@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .blue{background: SteelBlue;}
+        .red{background: LightCoral;}
+        .yellow{background: LemonChiffon;}
+        .green{background: PaleGreen;}
+        .result{}
+        .search{}
+        .list{height: 100vh; position: absolute; top: 62px; left: -100%; z-index: 1;transition: left 0.2s ease-in-out;}
+        .list.sq-active{left: 0;}
+        .list{height: 100vh;}
+        .map{height: 100vh;}
+        .map-span{display: none;}
+        .js-list-btn.sq-active .list-span{display: none;}
+        .js-list-btn.sq-active .map-span{display: block;}
+        @media (min-width: 992px) {
+          .list{position: static;}
+          .js-list-btn{display: none;}
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 result blue">
+          Results for ATM
+        </div>
+        <div class="col-sm-12 search red">
+          Search input
+          <button type="button" class="js-list-btn btn btn-outline-secondary float-right"><span class="list-span">List</span><span class="map-span">Map</span></button>
+        </div>
+        <div class="col-sm-12 col-lg-3 list yellow">
+          List results
+        </div>
+        <div class="col-sm-12 col-lg-9 map green">
+              Map results
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+ $.fn.extend({
+
+sqClassToggler: function(settings) {
+
+  var self = this;
+
+  var defaults = {
+    "slaves"          : ".sq-toggle-slave",
+    "masters_active"  : "sq-active",
+    "slaves_active"   : "sq-active",
+    "grouped"         : false,
+    "touch"           : false,
+    "outside"         : false
+  }
+
+  var settings = $.extend(defaults, settings);
+
+  var masters = $(self)
+  ,   slaves  = $(settings.slaves);
+
+  return self.each(function(i) {
+    // the triggered function on click of master
+    var classToggler = function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      // Set current triggered master and its slave.
+      var master = $(this)
+      ,   slave  = slaves.eq(i);
+
+      // Default behaviour - Toggle the clicked master and its slave
+      master.toggleClass(settings.masters_active);
+      slave.toggleClass(settings.slaves_active);
+
+      // Remove other instances of active classes if settings.grouped is true
+      if (settings.grouped) {
+        masters.not(master).removeClass(settings.masters_active);
+        slaves.not(slave).removeClass(settings.slaves_active);
+      }
+    }
+    // Events that trigger the classToggler
+    $(this).click(classToggler);
+    //$(this).keyup(classToggler);
+
+    // remove toggle classes on outside click of slave
+    if (settings.outside) {
+      $(document).mouseup(function(e) {
+        var els = $(self).add(settings.slaves);
+        if (!els.is(e.target) && els.has(e.target).length === 0)  {
+          masters.removeClass(settings.masters_active);
+          slaves.removeClass(settings.slaves_active);
+        }
+      });
+    }
+  });
+}
+});
+
+// Toggler class
+  $('.js-list-btn').sqClassToggler({
+    'slaves': '.list',
+    'grouped': false,
+    'outside': false
+  });
+    </script>
+  </body>
+</html>
