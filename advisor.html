@@ -59,6 +59,7 @@
       z-index: 900;
     }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -141,42 +142,17 @@
                 64 Adelaide St, Brisbane City QLD 4000
               </div>
               <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
 
                   <button id="show-dialog" type="button" class="mdl-button">Book an appointment</button>
-                  <dialog class="mdl-dialog">
-                    <h4 class="mdl-dialog__title">I want to book a</h4>
+                  <div class="dialog" style="display: none;width: 100%; position: fixed;top: 0;z-index: 10;margin: 0 auto;left: 0;background: rgba(0,0,0,0.2);height: 100vh;">
                     <div class="mdl-dialog__content">
-                      <div style="float: left; width: 50%;">
-
-                          <i class="material-icons" style="font-size: 60px;" onclick=window.location.href = 'http://www.google.com'>videocam</i>
-                          <p>Video chat</p>
-
-                      </div>
-                      <div style="float: left; width: 50%;">
-                        <i class="material-icons" style="font-size: 60px;">face</i>
-                        <p>face-to-face</p>
-                      </div>
-                      <p>appointment</p>
-                    </div>
-                    <div class="mdl-dialog__actions">
-                      <button type="button" class="mdl-button close">Go back</button>
-                    </div>
-                  </dialog>
+                      <img src="/images/call.png" style="max-width: 100%;max-width: 100%;position: absolute;width: 300px;left: 0;right: 0;margin: auto;top: 50%;transform: translateY(-50%);" onclick="window.location.href='/book.html';">
+                  </div>
                   <script>
-                    var dialog = document.querySelector('dialog');
-                    var showDialogButton = document.querySelector('#show-dialog');
-                    if (!dialog.showModal) {
-                      dialogPolyfill.registerDialog(dialog);
-                    }
-                    showDialogButton.addEventListener('click', function () {
-                      dialog.showModal();
-                    });
-                    dialog.querySelector('.close').addEventListener('click', function () {
-                      dialog.close();
-                    });
+                    jQuery('#show-dialog').click(function(){
+                      jQuery(".dialog").show();
+                    })
                   </script>
-                </a>
               </div>
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
