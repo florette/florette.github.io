@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://gel.westpacgroup.com.au/GUI/WBC/examples/templates/1.0.1/ex1/demo/?v=0.5.0 -->
+<html class="template grunticon js" lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Templates demo · GUI</title>
+	<script>
+		/*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+		!function () { function e(e, t) { function n() { !o && t && (o = !0, t.call(e)) } var o; e.addEventListener && e.addEventListener("load", n), e.attachEvent && e.attachEvent("onload", n), "isApplicationInstalled" in navigator && "onloadcssdefined" in e && e.onloadcssdefined(n) } !function (e) { "use strict"; var t = function (t, n, o) { function r(e) { if (c.body) return e(); setTimeout(function () { r(e) }) } function a() { d.addEventListener && d.removeEventListener("load", a), d.media = o || "all" } var i, c = e.document, d = c.createElement("link"); if (n) i = n; else { var l = (c.body || c.getElementsByTagName("head")[0]).childNodes; i = l[l.length - 1] } var s = c.styleSheets; d.rel = "stylesheet", d.href = t, d.media = "only x", r(function () { i.parentNode.insertBefore(d, n ? i : i.nextSibling) }); var u = function (e) { for (var t = d.href, n = s.length; n--;)if (s[n].href === t) return e(); setTimeout(function () { u(e) }) }; return d.addEventListener && d.addEventListener("load", a), d.onloadcssdefined = u, u(a), d }; "undefined" != typeof exports ? exports.loadCSS = t : e.loadCSS = t }("undefined" != typeof global ? global : this), function (t) { var n = function (o, r) { "use strict"; if (o && 3 === o.length) { var a = t.navigator, i = t.document, c = t.Image, d = !(!i.createElementNS || !i.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !i.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || t.opera && -1 === a.userAgent.indexOf("Chrome") || -1 !== a.userAgent.indexOf("Series40")), l = new c; l.onerror = function () { n.method = "png", n.href = o[2], loadCSS(o[2]) }, l.onload = function () { var t = 1 === l.width && 1 === l.height, a = o[t && d ? 0 : t ? 1 : 2]; n.method = t && d ? "svg" : t ? "datapng" : "png", n.href = a, e(loadCSS(a), r) }, l.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==", i.documentElement.className += " grunticon" } }; n.loadCSS = loadCSS, n.onloadCSS = e, t.grunticon = n }(this), function (e, t) { "use strict"; var n, o = t.document, r = function (e) { if (o.attachEvent ? "complete" === o.readyState : "loading" !== o.readyState) e(); else { var t = !1; o.addEventListener("readystatechange", function () { t || (t = !0, e()) }, !1) } }, a = function (e) { return t.document.querySelector('link[href$="' + e + '"]') }, i = function (e, t) { if (n && !t) return n; n = {}; var o, r, a, i, c, d; if (!(o = e.sheet)) return n; r = o.cssRules ? o.cssRules : o.rules; for (var l = 0; l < r.length; l++)a = r[l].cssText, i = "grunticon:" + r[l].selectorText, (c = a.split(");")[0].match(/US\-ASCII\,([^"']+)/)) && c[1] && (d = decodeURIComponent(c[1]), n[i] = d); return n }, c = function (e, t) { var n, r, a, i, c; t ? n = e : (t = e, n = o), i = "data-grunticon-embed"; for (var d in t) { c = d.slice("grunticon:".length); try { r = n.querySelectorAll(c) } catch (e) { continue } a = []; for (var l = 0; l < r.length; l++)null !== r[l].getAttribute(i) && a.push(r[l]); if (a.length) for (l = 0; l < a.length; l++)a[l].innerHTML = t[d], a[l].style.backgroundImage = "none", a[l].removeAttribute(i) } return a }, d = function (t, n) { "svg" === e.method && r(function () { var o = i(a(e.href)); "function" == typeof n ? (c(t, o), n()) : c(o), "function" == typeof t && t() }) }; e.embedIcons = c, e.getCSS = a, e.getIcons = i, e.ready = r, e.svgLoadedCallback = d, e.embedSVG = d }(grunticon, this) }();
+		grunticon(["/GUI/WBC/examples/templates/1.0.1/assets/css/symbols.data.svg.css", "/GUI/WBC/examples/templates/1.0.1/assets/css/symbols.data.png.css", "/GUI/WBC/examples/templates/1.0.1/assets/css/symbols.fallback.css"], grunticon.svgLoadedCallback);
+	</script>
+	<noscript>
+		<link href="/GUI/WBC/examples/templates/1.0.1/assets/css/symbols.fallback.css" rel="stylesheet">
+	</noscript>
+	<script type="text/javascript">
+		var $html = document.documentElement; if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else { var className = "no-js"; $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js" }
+	</script>
+	<link href="./index_files/example.min.css" rel="stylesheet">
+	<meta content="jQuery:1.11.2" id="d41d8cd98f00b204e9800998ecf8427e_lib_detect" name="d41d8cd98f00b204e9800998ecf8427e_lib_detect">
+	<script src="chrome-extension://cgaocdmhkmfnkdkbnckgmpopcbpaaejo/library/libraries.js">
+	</script>
+	<script src="chrome-extension://cgaocdmhkmfnkdkbnckgmpopcbpaaejo/content_scripts/lib_detect.js">
+	</script>
+	<style>
+    .demopage .main {
+      z-index: 10;
+    }
+		.search-bar {
+			height: 50px;
+			background: white;
+			text-align: center;
+			margin: 0 -10px;
+			background: #F9F9F8;
+			padding-top: 15px;
+		}
+		@media (min-width:768px){
+			.search-bar {
+				margin: 0;
+			}
+		}
+		@media (min-width:1024px){
+			.search-bar {
+			}
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+			height: 100px;
+			border-bottom: 1px solid black;
+			padding: 40px 0;
+		}
+
+		.list {
+			background: white;
+		}
+		@media (min-width:768px){
+			.list {
+			}
+		}
+		@media (min-width:1024px){
+			.list {
+        overflow-y: scroll;
+				height: calc(100vh - 116px);
+			}
+		}
+
+		.map {
+			height: calc(100vh - 106px);
+			background: PaleGreen;
+		}
+		@media (min-width:768px){
+			.map {
+				height: calc(100vh - 116px);
+			}
+		}
+		@media (min-width:1024px){
+			.map {
+				height: calc(100vh - 66px);
+			}
+		}
+
+		.filter {
+			height: 50px;
+			background: #F9F9F8;
+			width: 100%;
+			text-align: center;
+			padding-top: 15px;
+		}
+		@media (min-width:768px){
+			.filter {
+			}
+		}
+		@media (min-width:1024px){
+			.map {
+			}
+		}
+
+		.list-map-container {
+			position: relative;
+		}
+
+		.list-container {
+			z-index: 10;
+		}
+
+		.map-container {
+			position: absolute;
+			z-index: 5;
+		}
+		@media (min-width:1024px){
+			.map-container {
+				position: relative;
+				top: -50px;
+				height: calc(100vh - 116px);
+			}
+		}
+
+		.filter-container {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			z-index: 10;
+		}
+		@media (min-width:1024px){
+			.filter-container {
+        position: absolute;
+			}
+		}
+
+
+	</style>
+</head>
+
+<body class="demopage js-body">
+	<noscript>
+		<p role="alert">This website needs JavaScript to work properly.</p>
+	</noscript>
+	<div class="wrapper">
+		<header class="header header-basic header-fixed js-header">
+			<div class="header-inner">
+				<a class="sr-skiplink" href="https://gel.westpacgroup.com.au/GUI/WBC/examples/templates/1.0.1/ex1/demo/?v=0.5.0#content">Skip to main content</a>
+				<div class="header-left">
+					<a class="header-btn" href="https://gel.westpacgroup.com.au/GUI/WBC/examples/templates/1.0.1/ex1/demo/?v=0.5.0#">
+						<span class="sr-only">Back to previous step</span>
+						<span class="icon icon-arrow-left" style="background-image: none;">
+							<svg aria-labelledby="title-icon-arrow-left" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+								<title>Arrow Left</title>
+								<polygon class="icons-background" fill="#575F65" fill-rule="evenodd" points="9.824 12 16.412 18.588 15 20 7 12 15 4 16.412 5.412"></polygon>
+							</svg>
+						</span>
+					</a>
+				</div>
+				<a class="header-logo" href="https://gel.westpacgroup.com.au/GUI/WBC/examples/templates/1.0.1/ex1/demo/?v=0.5.0#">
+					<span class="sr-only">Go to home</span>
+					<span class="logo logo-multibrand-small hidden-sm hidden-md hidden-lg"></span>
+					<span class="logo logo-multibrand-large hidden-xs"></span>
+				</a>
+				<div class="header-right">
+					<!-- Header contact: 'Call us' -->
+					<a class="header-contact" href="tel:1300130961">
+						<span class="header-contact-icon icon icon-telephone" style="background-image: none;">
+							<svg aria-labelledby="title-icon-telephone" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+								<title>Telephone</title>
+								<path class="icons-background" d="M5.90003732,0 C5.72003732,0 5.53703732,0.0585 5.38403732,0.177 L3.66878732,1.497 L8.42303732,7.719 L10.1367873,6.40125 L10.1367873,6.39975 C10.5275373,6.099 10.5642873,5.56275 10.2897873,5.2035 L10.2912873,5.199 L6.56828732,0.33 C6.40028732,0.1125 6.15278732,0 5.90003732,0 L5.90003732,0 Z M17.7860373,15.55875 C17.6052873,15.55875 17.4230373,15.6165 17.2692873,15.73425 L15.5577873,17.05575 L20.2055373,23.1405 L21.9170373,21.82425 L21.9185373,21.82125 C22.3092873,21.51825 22.3467873,20.98425 22.0715373,20.625 L22.0715373,20.62125 L18.4505373,15.88875 C18.2862873,15.67125 18.0372873,15.55875 17.7860373,15.55875 L17.7860373,15.55875 Z M7.95578732,8.07975 C7.07303732,8.75775 7.68203732,9.97575 8.39828732,11.15175 C9.41528732,12.828 10.6445373,14.3565 11.7335373,15.51825 C12.9950373,16.86225 13.8027873,17.64075 14.4905373,17.64075 C14.7012873,17.64075 14.9015373,17.568 15.0987873,17.41575 L19.7352873,23.48625 C19.4300373,23.7315 18.7257873,24 17.6997873,24 C15.3327873,24 11.2542873,22.56675 6.43553732,16.09275 C-0.124712677,7.287 2.27153732,2.7555 3.19703732,1.85925 L7.95578732,8.07975 Z"
+								 fill="#575F65" fill-rule="evenodd"></path>
+							</svg>
+						</span>
+						<div class="header-contact-details hidden-xs">
+							<div class="header-contact-text">
+								Call us on
+							</div>
+							<div class="header-contact-text header-contact-text-accent">
+								1300 130 961
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="container-fluid">
+				<div class="content">
+					<!-- Content goes here -->
+					<div class="row">
+						<div class="col-xs-12 col-md-4">
+							<div class="search-bar">Search bar</div><!-- /.search-bar -->
+						</div>
+					</div><!-- /.row -->
+					<div class="row list-map-container">
+						<div class="col-xs-12 col-md-4 list-container">
+							<div class="list">
+								<ul>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+									<li>Item</li>
+								</ul>
+							</div><!-- /.list -->
+						</div>
+						<div class="col-xs-12 col-md-8 map-container">
+							<div class="map">Map</div><!-- /.map -->
+						</div>
+					</div><!-- /.row -->
+					<div class="row" style="position: relative">
+						<div class="col-xs-12 col-md-4 filter-container">
+							<div class="filter">Filters</div><!-- /.filter -->
+						</div>
+					</div><!-- /.row -->
+				</div>
+			</div>
+		</main>
+		<footer class="footer footer-basic">
+			<div class="footer-inner">
+				<div class="row">
+					<div class="col-sm-9">
+						<span class="footer-icon icon icon-padlock icon-small icon-medium-sm" style="background-image: none;">
+							<svg aria-labelledby="title-icon-padlock" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+								<title>Padlock</title>
+								<path class="icons-background" d="M6,8 L6,6 C6,2.6862915 8.6862915,0 12,0 C15.3137085,0 18,2.6862915 18,6 L18,8 L20,8 C21.1045695,8 22,8.8954305 22,10 L22,22 C22,23.1045695 21.1045695,24 20,24 L4,24 C2.8954305,24 2,23.1045695 2,22 L2,10 C2,8.8954305 2.8954305,8 4,8 L6,8 Z M16,8 L16,6 C16,3.790861 14.209139,2 12,2 C9.790861,2 8,3.790861 8,6 L8,8 L16,8 Z M12,18.5 C13.3807119,18.5 14.5,17.3807119 14.5,16 C14.5,14.6192881 13.3807119,13.5 12,13.5 C10.6192881,13.5 9.5,14.6192881 9.5,16 C9.5,17.3807119 10.6192881,18.5 12,18.5 Z"
+								 fill="#575F65" fill-rule="evenodd"></path>
+							</svg>
+						</span>
+						<div class="footer-text">
+							<p>Our site and your transactions are secure. You can read our
+								<a href="https://gel.westpacgroup.com.au/GUI/WBC/examples/templates/1.0.1/ex1/demo/?v=0.5.0#">security information</a>.
+								<br> © 2018 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714</p>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<a class="footer-logo" href="https://gel.westpacgroup.com.au/GUI/WBC/examples/templates/1.0.1/ex1/demo/?v=0.5.0#">
+							<span class="sr-only">Go to home</span>
+							<span class="logo logo-multibrand-small-right"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Gridly -->
+		<div class="gridly">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- .wrapper -->
+	<link href="./index_files/symbols.data.svg.css" media="all" rel="stylesheet">
+	<script src="./index_files/example.min.js">
+	</script>
+	<div class="bottom_right" id="viewPortSize" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 12px;">
+		Inner: 1428 x 690
+		<br> Outer: 1428 x 831
+	</div>
+</body>
+
+</html>
