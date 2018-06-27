@@ -284,8 +284,9 @@
 		var mapDiv = document.getElementById('map');
 		listDiv.style.height = windowHeight + 'px';
 		mapDiv.style.height = windowHeight + 'px';
-		alert( height)
+		alert( windowHeight)
 		window.onresize = function () {
+			alert(windowHeight)
 			var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
 			document.listDiv.style.height = windowHeight + 'px';
 			document.mapDiv.style.height = windowHeight + 'px';
