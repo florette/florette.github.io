@@ -196,7 +196,7 @@
 					</div><!-- /.row -->
 					<div class="row list-map-container">
 						<div class="col-xs-12 col-md-4 list-container">
-							<div class="list">
+							<div class="list" id="list">
 								<ul>
 									<li>Item test</li>
 									<li>Item</li>
@@ -212,7 +212,7 @@
 							</div><!-- /.list -->
 						</div>
 						<div class="col-xs-12 col-md-8 map-container">
-							<div class="map">Map</div><!-- /.map -->
+							<div class="map" id="map">Map</div><!-- /.map -->
 						</div>
 					</div><!-- /.row -->
 					<div class="row" style="position: relative">
@@ -279,11 +279,16 @@
 	</div>
 
 	<script>
-		var height = window.innerHeight ? window.innerHeight : $(window).height();
+		var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+		var listDiv = document.getElementById('list');
+		var mapDiv = document.getElementById('map');
+		listDiv.style.height = windowHeight + 'px';
+		mapDiv.style.height = windowHeight + 'px';
 		alert( height)
 		window.onresize = function () {
-			var height = window.innerHeight ? window.innerHeight : $(window).height();
-			alert( height)
+			var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+			document.listDiv.style.height = windowHeight + 'px';
+			document.mapDiv.style.height = windowHeight + 'px';
 		}
 		window.onresize(); // called to initially set the height.
 	</script>
