@@ -277,6 +277,22 @@
 		Inner: 1428 x 690
 		<br> Outer: 1428 x 831
 	</div>
+
+	<script>
+	window.onload = function() {
+		if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+			document.documentElement.innerHTML = document.documentElement.innerHTML;
+			console.log('iPhone1');
+		}
+	}
+
+	window.addEventListener("orientationchange", function () {
+		if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+			document.documentElement.innerHTML = document.documentElement.innerHTML;
+			console.log('iPhone2');
+		}
+	}, false);
+	</script>
 </body>
 
 </html>
