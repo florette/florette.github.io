@@ -282,14 +282,14 @@
 	window.onload = function() {
 		if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
 			document.documentElement.innerHTML = document.documentElement.innerHTML;
-			console.log('iPhone1');
+			alert('iPhone1');
 		}
 	}
 
 	window.addEventListener("orientationchange", function () {
 		if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
 			document.documentElement.innerHTML = document.documentElement.innerHTML;
-			console.log('iPhone2');
+			alert('iPhone2');
 		}
 	}, false);
 	</script>
