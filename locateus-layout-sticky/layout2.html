@@ -280,16 +280,20 @@
 
 	<script>
 		var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+		windowHeight = windowHeight;
 		var listDiv = document.getElementById('list');
 		var mapDiv = document.getElementById('map');
-		listDiv.style.height = windowHeight - 66 + 'px';
+		listDiv.style.height = windowHeight - 116 + 'px';
 		mapDiv.style.height = windowHeight - 66 + 'px';
 		alert( windowHeight)
 		window.onresize = function () {
-			alert(windowHeight)
 			var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
-			document.listDiv.style.height = windowHeight - 66 + 'px';
-			document.mapDiv.style.height = windowHeight - 66 + 'px';
+			windowHeight = windowHeight;
+			alert(windowHeight)
+			var listDiv = document.getElementById('list');
+			var mapDiv = document.getElementById('map');
+			listDiv.style.height = windowHeight - 116 + 'px';
+			mapDiv.style.height = windowHeight - 66 + 'px';
 		}
 		window.onresize(); // called to initially set the height.
 	</script>
