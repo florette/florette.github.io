@@ -194,7 +194,7 @@
 							<div class="search-bar">Search bar</div><!-- /.search-bar -->
 						</div>
 					</div><!-- /.row -->
-					<div class="row list-map-container">
+					<div class="row list-map-container" id="list-map-container">
 						<div class="col-xs-12 col-md-4 list-container">
 							<div class="list" id="list">
 								<ul>
@@ -280,22 +280,46 @@
 
 	<script>
 		var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
-		windowHeight = windowHeight;
+		var listMapDiv = document.getElementById('list-map-container');
 		var listDiv = document.getElementById('list');
 		var mapDiv = document.getElementById('map');
+		listMapDiv.style.height = windowHeight - 116 + 'px';
 		listDiv.style.height = windowHeight - 116 + 'px';
 		mapDiv.style.height = windowHeight - 66 + 'px';
-		alert( windowHeight + listDiv.style.height +  mapDiv.style.height)
+		alert( windowHeight + ',' + listMapDiv.style.height)
 		window.onresize = function () {
 			var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
 			windowHeight = windowHeight;
+			var listMapDiv = document.getElementById('list-map-container');
 			var listDiv = document.getElementById('list');
 			var mapDiv = document.getElementById('map');
+			listMapDiv.style.height = windowHeight - 116 + 'px';
 			listDiv.style.height = windowHeight - 116 + 'px';
 			mapDiv.style.height = windowHeight - 66 + 'px';
-			alert(windowHeight + listDiv.style.height + mapDiv.style.height)
+			alert(windowHeight + ',' + listMapDiv.style.height)
 		}
 		window.onresize(); // called to initially set the height.
+
+		// var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+		// windowHeight = windowHeight;
+		// var listDiv = document.getElementById('list');
+		// var mapDiv = document.getElementById('map');
+		// listDiv.style.height = windowHeight - 116 + 'px';
+		// mapDiv.style.height = windowHeight - 66 + 'px';
+		// alert(windowHeight + listDiv.style.height + mapDiv.style.height)
+		// window.onresize = function () {
+		// 	var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+		// 	windowHeight = windowHeight;
+		// 	var listDiv = document.getElementById('list');
+		// 	var mapDiv = document.getElementById('map');
+		// 	listDiv.style.height = windowHeight - 116 + 'px';
+		// 	mapDiv.style.height = windowHeight - 66 + 'px';
+		// 	alert(windowHeight + listDiv.style.height + mapDiv.style.height)
+		// }
+		// window.onresize(); // called to initially set the height.
+
+
+
 	</script>
 </body>
 
