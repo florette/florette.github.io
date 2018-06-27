@@ -279,11 +279,8 @@
 	</div>
 
 	<script>
-		window.onresize = function () {
-			alert('resize')
-			document.body.height = window.innerHeight;
-		}
-		window.onresize(); // called to initially set the height.
+		var height = window.innerHeight ? window.innerHeight : $(window).height();
+		console.log('height', height)
 	</script>
 </body>
 
