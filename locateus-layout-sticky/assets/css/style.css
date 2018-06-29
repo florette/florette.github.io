@@ -2,16 +2,16 @@
   z-index: 10;
 }
 .locateus {
-  background: red;
   position: relative;
   overflow-x: hidden;
+  background: white;
 }
 @media (min-width:768px) {
   .native .locateus {
     height: 100vh;
   }
   .website .locateus {
-    height: calc(100vh - 105px);
+    height: calc(100vh - 104px);
   }
   .locateus {
     overflow: hidden;
@@ -19,9 +19,8 @@
 }
 .search {
   height: 50px;
-  background: white;
+  background: lightgray;
   text-align: center;
-  background: #F9F9F8;
   padding-top: 15px;
 }
 @media (min-width:768px) {
@@ -38,7 +37,7 @@
   height: 100vh;
 }
 .website .list {
-  height: calc(100vh - 105px);
+  height: calc(100vh - 104px);
 }
 .list {
   overflow: hidden;
@@ -80,7 +79,7 @@ li {
 .filter-inner {
   width: 100%;
   height: 50px;
-  background: #F9F9F8;
+  background: lightgray;
   text-align: center;
   padding-top: 15px;
 }
@@ -93,7 +92,7 @@ li {
   height: 100vh;
 }
 .website .map {
-  height: calc(100vh - 105px);
+  height: calc(100vh - 104px);
 }
 .map {
   background: PaleGreen;
@@ -109,9 +108,14 @@ li {
     float: left;
     position: relative;
     top: -50px;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 54px);
   }
 }
 .map.hide {
   left: 100%;
+}
+@media (min-width:768px) {
+  .map.hide {
+    left: 0;
+  }
 }
