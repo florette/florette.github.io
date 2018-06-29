@@ -15,8 +15,6 @@
 	</script>
 	<link href="./index_files/example.min.css" rel="stylesheet">
 	<meta content="jQuery:1.11.2" id="d41d8cd98f00b204e9800998ecf8427e_lib_detect" name="d41d8cd98f00b204e9800998ecf8427e_lib_detect">
-	</script>
-	</script>
 	<style>
     .demopage .main {
       z-index: 10;
@@ -29,7 +27,7 @@
 		}
 		@media (min-width:768px){
 			.locateus {
-				height: 100vh;
+				height: calc(100vh - 105px);
 				overflow: hidden;
 			}
 		}
@@ -54,7 +52,7 @@
 		}
 
 		.list {
-			height: 100vh;
+			height: calc(100vh - 105px);
 			overflow: hidden;
 		}
 		@media (min-width:768px){
@@ -111,7 +109,6 @@
 
 		.filters.absolute {
 			position: absolute;
-			left: 0;
 		}
 
 		.filter-inner {
@@ -128,7 +125,7 @@
 		}
 
 		.map {
-      height: 100vh;
+      height: calc(100vh - 105px);
 			background: PaleGreen;
 			position: absolute;
 			left: 0;
@@ -142,7 +139,7 @@
 				float: left;
 				position: relative;
 				top: -50px;
-				height: calc(100vh + 50px);
+				height: calc(100vh - 55px);
 			}
 		}
 
@@ -292,32 +289,36 @@
 		</div>
 	</div>
 	<!-- .wrapper -->
+	<link href="./index_files/symbols.data.svg.css" media="all" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 	<script src="./assets/js/noframework.waypoints.min.js"></script>
   <script>
-	// var waypoint = new Waypoint({
-	// 		element: document.getElementById('waypoint'),
-	// 		handler: function (direction) {
-	// 			alert(this.id + ' hit')
-	// 		}
-	// 	})
+		$('.js-button').click(function(){
+			$('.map').toggleClass('hide');
+			$('.list').toggleClass('show');
+		});
 
+		var waypoint = new Waypoint({
+			element: document.getElementById('waypoint'),
+			handler: function (direction) {
+				$('.filters').toggleClass('absolute')
+			},
+			offset: 'bottom-in-view'
+		})
 
+		// var footerHeight = $('.footer').outerHeight();
+		// alert(footerHeight)
 
-
-	$('.js-button').click(function(){
-		$('.map').toggleClass('hide');
-		$('.list').toggleClass('show');
-	});
-
-	var waypoint = new Waypoint({
-		element: document.getElementById('waypoint'),
-		handler: function () {
-			$('.filters').toggleClass('absolute')
-		},
-		offset: 'bottom-in-view'
-	});
-
+		// $(window).scroll(function () {
+		// 	var footerHeight = $('.footer').outerHeight();
+		// 	alert(footerHeight)
+		// 	if ($(window).scrollTop() + $(window).height() > $(document).height() - 87) {
+		// 		$('.filters').addClass('absolute')
+		// 	}
+		// 	if ($(window).scrollTop() + $(window).height() < $(document).height() - 87) {
+		// 		$('.filters').removeClass('absolute')
+		// 	}
+		// });
   </script>
 </body>
 

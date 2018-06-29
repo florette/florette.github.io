@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://gel.westpacgroup.com.au/GUI/WBC/examples/templates/1.0.1/ex1/demo/?v=0.5.0 -->
+<html class="template grunticon js" lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Templates demo · GUI</title>
+	<noscript>
+		<link href="/GUI/WBC/examples/templates/1.0.1/assets/css/symbols.fallback.css" rel="stylesheet">
+	</noscript>
+	<script type="text/javascript">
+		var $html = document.documentElement; if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else { var className = "no-js"; $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js" }
+	</script>
+	<link href="./index_files/example.min.css" rel="stylesheet">
+	<meta content="jQuery:1.11.2" id="d41d8cd98f00b204e9800998ecf8427e_lib_detect" name="d41d8cd98f00b204e9800998ecf8427e_lib_detect">
+	<style>
+    .demopage .main {
+      z-index: 10;
+    }
+
+		.native .locateus {
+			background: red;
+			position: relative;
+			overflow-x: hidden;
+      margin-top: 40px;
+		}
+		@media (min-width:768px){
+			.native .locateus {
+				height: calc(100vh - 40px);
+				overflow: hidden;
+			}
+		}
+
+		.search {
+			height: 50px;
+			background: white;
+			text-align: center;
+			background: #F9F9F8;
+			padding-top: 15px;
+		}
+		@media (min-width:768px){
+			.search {
+				width: 41.6666667%;
+			}
+		}
+
+		.js-button {
+			border: 1px solid black;
+			position: absolute;
+			right: 10px;
+		}
+
+    .native .list {
+			height: calc(100vh - 40px);
+    }
+
+		.list {
+			overflow: hidden;
+		}
+		@media (min-width:768px){
+			.list {
+				width: 41.6666667%;
+				float: left;
+				overflow: scroll;
+				padding-bottom: 50px;
+			}
+		}
+
+		.list.show {
+			height: auto;
+		}
+
+		ul {
+			margin: 0 0 50px;
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+			height: 100px;
+			border-bottom: 1px solid black;
+			padding: 40px 0;
+		}
+
+		.filters {
+			width: 100%;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			z-index: 10;
+		}
+		@media (min-width:768px){
+			.filters {
+			}
+			.filters.absolute {
+
+			}
+		}
+		@media (min-width:1024px){
+		}
+
+    .native .filters.absolute {
+      position: fixed;
+		}
+
+		.native  .filters.absolute .container-fluid {
+			padding: 0;
+		}
+    @media (min-width:768px){
+      .native .filters.absolute .container-fluid {
+        padding-right: 36px;
+        padding-left: 36px;
+      }
+    }
+
+		@media (min-width:768px){
+			.filters.absolute .container-fluid .row {
+				margin: 0;
+			}
+		}
+
+    @media (min-width:1024px){
+			.native .filters.absolute .container-fluid .row {
+        padding: 0 12px;
+			}
+		}
+
+		.native .filters.absolute {
+			position: fixed;
+		}
+
+		.filter-inner {
+			width: 100%;
+			height: 50px;
+			background: #F9F9F8;
+			text-align: center;
+			padding-top: 15px;
+		}
+		@media (min-width:768px){
+			.filter-inner {
+				width: 41.66666667%;
+			}
+		}
+
+    .native .map {
+      height: calc(100vh - 40px);
+    }
+
+		.map {
+			background: PaleGreen;
+			position: absolute;
+			left: 0;
+			top: 50px;
+			width: 100%;
+			transition: 0.3s left ease-in-out;
+		}
+		@media (min-width:768px){
+			.map {
+				width: 58.3333333%;
+				float: left;
+				position: relative;
+				top: -50px;
+				height: calc(100vh - 55px);
+			}
+		}
+
+		.map.hide {
+			left: 100%;
+		}
+
+    .native-controls {
+      height: 40px;
+      background: lightgrey;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+
+	</style>
+</head>
+
+<body class="demopage js-body native">
+	<noscript>
+		<p role="alert">This website needs JavaScript to work properly.</p>
+  </noscript>
+  <div class="native-controls">Native controls</div>
+	<div class="wrapper">
+		<main class="main">
+			<div class="container-fluid">
+				<div class="content">
+          <!-- Content goes here -->
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="locateus" id="waypoint">
+								<div class="search">
+									Search<button class="js-button">X</button></div>
+									<div class="list">
+										<ul>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+											<li>Item</li>
+										</ul>
+									</div>
+									<div class="filters">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="filter-inner">Filters</div>
+											</div>
+										</div>
+									</div>
+									<div class="map">Map</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.row -->
+
+				</div>
+			</div>
+		</main>
+		<!-- Gridly -->
+		<div class="gridly">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- .wrapper -->
+	<link href="./index_files/symbols.data.svg.css" media="all" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="./assets/js/noframework.waypoints.min.js"></script>
+  <script>
+		$('.js-button').click(function(){
+			$('.map').toggleClass('hide');
+			$('.list').toggleClass('show');
+		});
+
+		var waypoint = new Waypoint({
+			element: document.getElementById('waypoint'),
+			handler: function (direction) {
+				$('.filters').toggleClass('absolute')
+			},
+			offset: 'bottom-in-view'
+		})
+
+		// var footerHeight = $('.footer').outerHeight();
+		// alert(footerHeight)
+
+		// $(window).scroll(function () {
+		// 	var footerHeight = $('.footer').outerHeight();
+		// 	alert(footerHeight)
+		// 	if ($(window).scrollTop() + $(window).height() > $(document).height() - 87) {
+		// 		$('.filters').addClass('absolute')
+		// 	}
+		// 	if ($(window).scrollTop() + $(window).height() < $(document).height() - 87) {
+		// 		$('.filters').removeClass('absolute')
+		// 	}
+		// });
+  </script>
+</body>
+
+</html>
