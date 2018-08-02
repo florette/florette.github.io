@@ -57,6 +57,12 @@ $('.btn-skip').click(function(){
   }, 500);
 });
 
+$('.btn-mandarin').click(function () {
+  setTimeout(function () {
+    window.location.href = "eng-sign-in.html";
+  }, 500);
+});
+
 $('.btn-client-id').click(function () {
   setTimeout(function () {
     window.location.href = "client-id.html";
