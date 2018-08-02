@@ -178,11 +178,20 @@ button:hover {
   z-index: 10;
 }
 
-.btn-pay-someone {
+.btn-pay-someone-landing {
   width: 267px;
   height: 50px;
   position: absolute;
   top: 394px;
+  left: 33px;
+  z-index: 10;
+}
+
+.btn-pay-someone {
+  width: 267px;
+  height: 77px;
+  position: absolute;
+  top: 185px;
   left: 33px;
   z-index: 10;
 }

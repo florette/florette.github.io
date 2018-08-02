@@ -111,6 +111,12 @@ $('.btn-view-statement-page').click(function () {
   }, 500);
 });
 
+$('.btn-pay-someone-landing').click(function () {
+  setTimeout(function () {
+    window.location.href = "pay-someone-landing.html";
+  }, 500);
+});
+
 $('.btn-pay-someone').click(function () {
   setTimeout(function () {
     window.location.href = "pay-someone.html";
