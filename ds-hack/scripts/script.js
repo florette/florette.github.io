@@ -5,7 +5,7 @@
 // Hand following mouse
 $(document).bind('mousemove', function (e) {
   $('#finger').css({
-    left: e.pageX - 870, // Don't change this --> setting for full screen
+    left: e.pageX - 670, // Don't change this --> setting for full screen
     top: e.pageY - 110 // Don't change this --> setting for full screen
   });
   $('#ripple-bound').css({
@@ -108,5 +108,29 @@ $('.btn-transaction-account').click(function () {
 $('.btn-view-statement-page').click(function () {
   setTimeout(function () {
     window.location.href = "statement-page.html";
+  }, 500);
+});
+
+$('.btn-pay-someone').click(function () {
+  setTimeout(function () {
+    window.location.href = "pay-someone.html";
+  }, 500);
+});
+
+$('.btn-choose-annie').click(function () {
+  setTimeout(function () {
+    window.location.href = "annie-amount.html";
+  }, 500);
+});
+
+$('.btn-annie-amount').click(function () {
+  setTimeout(function () {
+    window.location.href = "annie-next.html";
+  }, 500);
+});
+
+$('.btn-annie-next').click(function () {
+  setTimeout(function () {
+    window.location.href = "annie-confirm.html";
   }, 500);
 });

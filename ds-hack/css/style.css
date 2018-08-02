@@ -2,14 +2,34 @@
   height: 100vh;
 }
 
+.main-wrapper {
+  margin: 0 auto;
+  position: relative;
+  width: 830px;
+  height: 100vh;
+}
+
 .phone-wrapper {
   width: 335px;
   height: 679px;
   background: url(../images/phone.png) no-repeat;
-  margin: 0 auto;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  float: left;
+  margin: 0 40px;
+}
+
+.phone-wrapper-china {
+  width: 335px;
+  height: 679px;
+  background: url(../images/phone.png) no-repeat;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  float: left;
+  margin: 0 40px;
+  z-index: -1;
 }
 
 #finger {
@@ -154,6 +174,51 @@ button:hover {
   height: 34px;
   position: absolute;
   top: 294px;
+  left: 33px;
+  z-index: 10;
+}
+
+.btn-pay-someone {
+  width: 267px;
+  height: 50px;
+  position: absolute;
+  top: 394px;
+  left: 33px;
+  z-index: 10;
+}
+
+.btn-choose-annie {
+  width: 267px;
+  height: 100px;
+  position: absolute;
+  top: 394px;
+  left: 33px;
+  z-index: 10;
+}
+
+.btn-annie-amount {
+  width: 267px;
+  height: 37px;
+  position: absolute;
+  top: 414px;
+  left: 33px;
+  z-index: 10;
+}
+
+.btn-annie-next {
+  width: 137px;
+  height: 37px;
+  position: absolute;
+  top: 499px;
+  left: 170px;
+  z-index: 10;
+}
+
+.btn-annie-confirm {
+  width: 267px;
+  height: 37px;
+  position: absolute;
+  top: 414px;
   left: 33px;
   z-index: 10;
 }
