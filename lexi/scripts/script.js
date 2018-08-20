@@ -143,7 +143,7 @@ $(document).ready(function () {
         .first().addClass('playing').get(0).play();
 
       var timeout1 = 17500;
-      var timeout2 = 36500;
+      var timeout2 = 37500;
       var timeout3 = 41500;
       var timeout4 = 16500;
       var timeout5 = 44000;

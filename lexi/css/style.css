@@ -455,3 +455,7 @@ body {
   background: url(../images/play.png) no-repeat;
   transform: translate(-50%, -50%);
 }
+
+.slider-navigation {
+  display: none;
+}
