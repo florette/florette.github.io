@@ -1,0 +1,28 @@
+.iframe__wrapper {
+  width: 50%;
+  float: left;
+  height: 700px;
+  position: relative;
+}
+
+.phone__bg {
+  background: url(../images/phone.png) no-repeat;
+  width: 360px;
+  height: 681px;
+  position: absolute;
+  left: 5px;
+  right: 0;
+  margin: auto;
+  top: 15px;
+  z-index: 2;
+}
+
+.hide__credit {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background:#fff;
+  z-index: 1;
+}
