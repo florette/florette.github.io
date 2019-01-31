@@ -5,21 +5,27 @@
 <head>
     <meta charset="utf-8">
 
-    <title></title>
+    <title>OptimusX</title>
 
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
-    <a href="javascript:alert('Hi');">Click Me!</a>
     
-    <a href="
+    <!-- <a href="
     javascript:
     var q = document.createElement('script');
     q.src = '//florette.github.io/bookmarklet/js/scripts.js';
     document.body.appendChild(q);
-    void 0;">Click Me2!</a>
+    void 0;">Click Me2!</a> -->
+
+    <a href="
+    javascript:
+    var jQuery = document.createElement('script');
+    jQuery.src = '//127.0.0.1:8080/bookmarklet/js/jquery.min.js';
+    document.body.appendChild(jQuery);
+    void 0;">Click Me!</a>
 </body>
 
 </html>
