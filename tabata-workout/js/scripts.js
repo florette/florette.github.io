@@ -14,7 +14,7 @@ function getData() {
         }
     };
 
-    xhttp.open('get', '//127.0.0.1:8080/js/HIIT.json', true);
+    xhttp.open('get', '//florette.github.io/tabata-workout/js/HIIT.json', true);
     xhttp.send();
 }
 
