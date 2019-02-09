@@ -14,7 +14,7 @@ function getData() {
         }
     };
 
-    xhttp.open('get', '//florette.github.io/tabata-workout/js/HIIT.json', true);
+    xhttp.open('get', '//127.0.0.1:8080/js/HIIT.json', true);
     xhttp.send();
 }
 
@@ -54,7 +54,7 @@ var build = function(data) {
         allExercises.forEach(function (item, index) {
             html += '<li class="item__training">' +
             '<h2 class="section__title">' + item + '</h2></li>';
-            html += '<li class="item__pause"><h2 class="section__title">Pause</h2></li>';
+            html += '<li class="item__pause"><h2 class="section__title">Rest</h2></li>';
         });
 
         list.insertAdjacentHTML('beforeend', html);
@@ -65,14 +65,17 @@ var build = function(data) {
     processData();
     makeListChildren();
     makeActive();
-    timerHandler();
+    handleTimer();
 }
 
-var timerHandler = function() {
+var handleTimer = function() {
     var buttonStart = document.querySelector('.btn__start-js');
-    var buttonStop = document.querySelector('.btn__stop-js');
-    buttonStart.addEventListener('click', counter.bind(this, countTraining, buttonStart, buttonStop)); 
-    // buttonStop.addEventListener('click', counter.bind(this, countTraining)); 
+    buttonStart.addEventListener('click', clickStart.bind(this, buttonStart));
+}
+
+var clickStart = function(buttonStart) {
+    buttonStart.classList.add('hide');
+    counter(countTraining);
 }
 
 var listItem = document.querySelector('.exercise__list').getElementsByTagName('li');
@@ -109,11 +112,7 @@ var populateNext = function() {
     destination.innerHTML = text;
 }
 
-var counter = function(number, buttonStart, buttonStop) {
-    // Hide start button
-    buttonStart.classList.add('hide');
-    buttonStop.classList.add('show');
-
+var counter = function(number) {
     var count = number;
     var timerDiv = document.querySelector('.timer-js');
     var interval = setInterval(function() {

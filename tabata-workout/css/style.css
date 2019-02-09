@@ -56,12 +56,17 @@
     transition: all .3s ease-in-out;
 }
 
+.btn__start {
+    z-index: 1;
+}
+
 .btn__stop {
     transform: scale(0);
     transform-origin: center;
     width: 0;
     height: 0;
     font-size: 0;
+    z-index: 0;
 }
 
 .btn__start.hide {
@@ -70,6 +75,7 @@
     width: 0;
     height: 0;
     font-size: 0;
+    z-index: 0;
 }
 
 .btn__stop.show {
@@ -78,4 +84,5 @@
     width: 100px;
     height: 100px;
     font-size: 100%;
+    z-index: 1;
 }

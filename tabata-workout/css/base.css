@@ -126,7 +126,6 @@ button:focus {
 }
 
 .title {
-	text-transform: lowercase;
 	font-size: 1.35rem;
 	margin: 0;
 }
