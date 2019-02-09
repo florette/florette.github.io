@@ -10,7 +10,6 @@ function getData() {
             console.log(this.responseText);
             var responseText = JSON.parse(this.responseText);
             build(responseText.HIIT);
-            
         }
     };
 
@@ -35,13 +34,19 @@ var build = function(data) {
             var repeat = allData[i].repeat;
             // Make series
             var serie = Array.apply(null, Array(repeat)).map(function(){return allData[i].serie}); 
+
+            function flatten(arr) {
+                return arr.reduce(function (flat, toFlatten) {
+                    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+                }, []);
+            }
             
-            serie = serie.flat();
+            serie = flatten(serie);
             console.log(serie);
             allExercises.push(serie);
         }
     
-        allExercises = allExercises.flat();
+        allExercises = flatten(allExercises);
     
         console.log('allExercises',allExercises);
         
