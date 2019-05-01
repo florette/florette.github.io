@@ -1,0 +1,37 @@
+.input-group-control:first-child > .btn,
+.input-group-control:last-child > .btn,
+.input-group-control:first-child + .input-group-control > .btn-hero,
+.input-group-control:nth-last-of-type(2):not(:first-child) > .btn {
+    position: relative;
+    z-index: 3;
+}
+
+.input-group-control:first-child > .btn:before,
+.input-group-control:last-child > .btn:before,
+.input-group-control:first-child + .input-group-control > .btn:before,
+.input-group-control:nth-last-of-type(2):not(:first-child) > .btn:before {
+    position: absolute;
+    width: 2px;
+    height: calc(100% + 2px);
+    background: #78BE28;
+    content: "";
+    top: -1px;
+    z-index: 1;
+}
+
+.input-group-control:first-child > .btn-primary:before,
+.input-group-control:last-child > .btn-primary:before,
+.input-group-control:first-child + .input-group-control > .btn-primary:before,
+.input-group-control:nth-last-of-type(2):not(:first-child) > .btn-primary:before {
+    background: #e30000;
+}
+
+.input-group-control:first-child > .btn:before,
+.input-group-control:first-child + .input-group-control > .btn:before {
+    right: -2px;
+}
+
+.input-group-control:last-child > .btn:before,
+.input-group-control:nth-last-of-type(2):not(:first-child) > .btn:before {
+    left: -2px;
+}
