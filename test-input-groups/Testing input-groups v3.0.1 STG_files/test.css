@@ -11,7 +11,7 @@
 .input-group-control:first-child + .input-group-control > .btn:before,
 .input-group-control:nth-last-of-type(2):not(:first-child) > .btn:before {
     position: absolute;
-    width: 2px;
+    width: 1px;
     height: calc(100% + 2px);
     background: #78BE28;
     content: "";
@@ -28,10 +28,20 @@
 
 .input-group-control:first-child > .btn:before,
 .input-group-control:first-child + .input-group-control > .btn:before {
-    right: -2px;
+    right: -1px;
 }
 
 .input-group-control:last-child > .btn:before,
 .input-group-control:nth-last-of-type(2):not(:first-child) > .btn:before {
-    left: -2px;
+    left: -1px;
+}
+
+.input-group-control:first-child > .btn,
+.input-group-control:first-child + .input-group-control > .btn {
+    border-right: none;
+}   
+
+.input-group-control:last-child > .btn,
+.input-group-control:nth-last-of-type(2):not(:first-child) > .btn {
+    border-left: none;
 }
