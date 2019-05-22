@@ -1,0 +1,233 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+button {
+    outline: none;
+    cursor: url('../img/cursor2.png'), auto;
+    z-index: 100;
+    background: none;
+    border: none;
+    width: 100%;
+    position: absolute;
+    display: none;
+}
+
+/* My styles */
+.image {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+}
+
+.img-text {
+    font-family: 'Pacifico';
+    position: absolute;
+    top: 210px;
+    width: 400px;
+    text-align: center;
+    font-size: 56px;
+    line-height: 1.6;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-text-1,
+.img-text-2 {
+    font-family: 'Nunito';
+    position: absolute;
+    width: 320px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-text-1 {
+    top: 154px;
+}
+
+.img-text-2 {
+    top: 470px;
+    color: white;
+    font-size: 24px;
+}
+
+.main__wrapper {
+    margin: 20px auto;
+    height: 700px;
+    width: 357px;
+    position: relative;
+}
+
+.img__wrapper {
+    width: 301px;
+    height: 650px;
+    position: relative;
+    cursor: url('../img/cursor.png'), auto;
+    left: 28px;
+    top: 25px;
+    overflow-y: scroll;
+    /* z-index: 1000; */
+} 
+
+.phone__img {
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.screen__img {
+    position: absolute;
+    width: 301px;
+    z-index: 5;
+    left: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.screen__card__wrapper {
+    position: relative;
+
+}
+
+.btn__screen1 {
+    height: 38px;
+    top: 474px;
+}
+
+.btn__screen2 {
+    height: 38px;
+    top: 337px;
+}
+
+.video__wrapper {
+    position: absolute;
+    top: 121px;
+    overflow: hidden;
+    z-index: 200;
+    width: 290px;
+    left: 5px;
+    display: none
+}
+
+
+video {
+    width: 523px;
+    position: relative;
+    left: -114px;
+}
+
+.screen3 {
+    bottom: -100%;
+    left: 0;
+    z-index: 200;
+}
+
+.screen4 {
+    left: 0;
+    display: none;
+}
+
+.btn__screen3 {
+    height: 38px;
+    top: 489px;
+}
+
+.btn__screen5 {
+    height: 38px;
+    top: 386px;
+    z-index: 400;
+}
+
+.screen5 {
+    z-index: 400;
+    bottom: -100%;
+    left: 0;
+}
+
+.btn__screen6 {
+    height: 38px;
+    top: 333px;
+    z-index: 400;
+}
+
+.screen6 {
+    z-index: 400;
+}
+
+.active {
+    left: 0 !important;
+    display: block;
+}
+
+.active-bottom {
+    bottom: 0 !important;
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+
