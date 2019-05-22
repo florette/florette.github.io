@@ -125,7 +125,7 @@ button {
     cursor: url('../img/cursor.png'), auto;
     left: 28px;
     top: 25px;
-    overflow-y: scroll;
+    overflow: hidden;
     /* z-index: 1000; */
 } 
 
