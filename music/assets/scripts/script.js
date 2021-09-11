@@ -10,30 +10,91 @@ const play = document.getElementById('play');
 const next = document.getElementById('next');
 let songIndex = 0;
 
+// song list
+const songList = document.getElementById('song-list');
+
 // Songs info
 const songs = [
   {
     title: 'Une souris verte',
-    coverPath: 'assets/images/sourisverte.jpg',
-    discPath: 'assets/music/Unesourisverte.mp3',
+    coverPath: 'assets/images/souris-verte.jpg',
+    discPath: 'assets/music/souris-verte.mp3',
     duration: '0.44',
+    href: 'souris-verte',
   },
   {
-    title: 'Dance with Me',
-    coverPath: 'assets/images/cover2.jpg',
-    discPath: 'assets/music/music2.mp3',
-    duration: '2:22',
+    title: 'Ah les crocodiles',
+    coverPath: 'assets/images/crocodiles.jpg',
+    discPath: 'assets/music/crocodiles.mp3',
+    duration: '2:36',
+    href: 'crocodiles',
   },
   {
-    title: 'Gimme that Bottle',
-    coverPath: 'assets/images/cover3.jpg',
-    discPath: 'assets/music/music3.mp3',
-    duration: '1:54',
+    title: 'Promenons-nous dans les bois',
+    coverPath: 'assets/images/promenons-nous.png',
+    discPath: 'assets/music/promenons-nous.mp3',
+    duration: '1:42',
+    href: 'promenons-nous',
+  },
+  {
+    title: 'Il était un petit navire',
+    coverPath: 'assets/images/petit-navire.jpg',
+    discPath: 'assets/music/petit-navire.mp3',
+    duration: '4:28',
+    href: 'petit-navire',
+  },
+  {
+    title: 'Ainsi font font font',
+    coverPath: 'assets/images/ainsi-font.jpg',
+    discPath: 'assets/music/ainsi-font.mp3',
+    duration: '1:33',
+    href: 'ainsi-font',
+  },
+  {
+    title: 'Tourne petit moulin',
+    coverPath: 'assets/images/petit-moulin.jpg',
+    discPath: 'assets/music/petit-moulin.mp3',
+    duration: '1:44',
+    href: 'petit-moulin',
+  },
+  {
+    title: 'Un éléphant qui se balançait',
+    coverPath: 'assets/images/elephant.jpg',
+    discPath: 'assets/music/elephant.mp3',
+    duration: '2:15',
+    href: 'elephant',
+  },
+  {
+    title: 'Un grand cerf',
+    coverPath: 'assets/images/grand-cerf.jpg',
+    discPath: 'assets/music/grand-cerf.mp3',
+    duration: '1:17',
+    href: 'grand-cerf',
+  },
+  {
+    title: 'L\'araignée Gipsy',
+    coverPath: 'assets/images/araignee.jpg',
+    discPath: 'assets/music/araignee.mp3',
+    duration: '0:52',
+    href: 'araignee',
+  },
+  {
+    title: 'Sur le pont d\'Avignon',
+    coverPath: 'assets/images/pont-avignon.jpg',
+    discPath: 'assets/music/pont-avignon.mp3',
+    duration: '1:46',
+    href: 'pont-avignon',
+  },
+  {
+    title: 'Mon âne',
+    coverPath: 'assets/images/mon-ane.jpg',
+    discPath: 'assets/music/mon-ane.mp3',
+    duration: '1:35',
+    href: 'mon-ane',
   },
 ];
 
-// Load song initially
-loadSong(songs[songIndex]);
+
 
 // Load the given song
 function loadSong(song) {
@@ -121,20 +182,20 @@ function setProgress(ev) {
   disc.currentTime = clickWidthRatio * disc.duration;
 }
 
-// Play/Pause when play button clicked
-play.addEventListener('click', playPauseMedia);
+// Load song list
+function getSongs() {
+  for (const song of songs) {
+    console.log(song);
+    songList.innerHTML += `<div class="song"><a href="player.html#${song.href}"><img class="song_img" src="${song.coverPath}"></a><h4>${song.title}</h4></div>`;
+  }
+}
 
-// Various events on disc
-disc.addEventListener('play', updatePlayPauseIcon);
-disc.addEventListener('pause', updatePlayPauseIcon);
-disc.addEventListener('timeupdate', updateProgress);
-disc.addEventListener('ended', gotoNextSong.bind(null, true));
+console.log(window.location.hash.substring(1))
 
-// Go to next song when next button clicked
-prev.addEventListener('click', gotoPreviousSong);
-
-// Go to previous song when previous button clicked
-next.addEventListener('click', gotoNextSong.bind(null, false));
-
-// Move to different place in the song
-progressContainer.addEventListener('click', setProgress);
+function playFromList() {
+  for (const song of songs) {
+    if (window.location.hash.substring(1) === song.href) {
+      loadSong(song);
+    }
+  }
+}

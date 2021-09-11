@@ -143,3 +143,22 @@ body {
     opacity: 0.75;
   }
 }
+
+.song {
+  width: 50%;
+  float: left;
+  padding: 10px;
+  text-align: center;
+  height: 174px;
+}
+
+.song_img {
+  width: 120px;
+  height: auto;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.song h4 {
+  width: 100px;
+  margin: 0 auto;
+}
