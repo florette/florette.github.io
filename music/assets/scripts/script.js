@@ -99,7 +99,6 @@ for (const [i, song] of songs.entries()) {
     songIndex = i;
   }
 }
-console.log(songIndex);
 
 // Load the given song
 function loadSong(song) {
@@ -199,5 +198,59 @@ function playFromList() {
     if (songID === song.href) {
       loadSong(song);
     }
+  }
+}
+
+// Animals sounds
+
+// Animals variables
+const animalList = document.getElementById("animal-list");
+const animalBtnList = document.getElementsByClassName("animal__item");
+const animalDisc = document.getElementById("animal-disc");
+
+// Animals
+const animals = [
+  {
+    id: "vache",
+    coverPath: "assets/images/animaux/vache.png",
+    soundStart: 4,
+    soundEnd: 12,
+  },
+  {
+    id: "cheval",
+    coverPath: "assets/images/animaux/cheval.png",
+    soundStart: 13,
+    soundEnd: 18,
+  },
+  {
+    id: "chat",
+    coverPath: "assets/images/animaux/chat.png",
+    soundStart: 21,
+    soundEnd: 26,
+  },
+];
+
+function getAnimals() {
+  for (const animal of animals) {
+    animalList.innerHTML += `<button class="animal__item" id="${animal.id}"><img src="${animal.coverPath}"></button>`;
+  }
+}
+
+function playAnimal() {
+  for (const btn of animalBtnList) {
+    btn.addEventListener("click", function (e) {
+      const thisAnimal = this.id;
+      for (const animal of animals) {
+        if (thisAnimal === animal.id) {
+          animalDisc.src = "assets/music/animaux/animaux.mp3";
+          animalDisc.currentTime = animal.soundStart;
+          animalDisc.play();
+          if (animalDisc.currentTime === animal.soundEnd) {
+            console.log("test");
+            animalDisc.pause();
+          }
+        }
+      }
+    });
   }
 }
