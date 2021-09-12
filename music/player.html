@@ -20,7 +20,11 @@
     <div class="container">
       <div class="music-container">
         <div id="cover-box">
-          <img src="assets/images/souris-verte.jpg" alt="cover-image" id="cover" />
+          <img
+            src="assets/images/souris-verte.jpg"
+            alt="cover-image"
+            id="cover"
+          />
         </div>
         <div id="music-box">
           <audio id="disc"></audio>
@@ -44,32 +48,27 @@
     </div>
     <script src="assets/scripts/script.js"></script>
     <script>
-      // Load song initially
-      loadSong(songs[songIndex]);
-
       // Play/Pause when play button clicked
-      play.addEventListener('click', playPauseMedia);
+      play.addEventListener("click", playPauseMedia);
 
       // Various events on disc
-      disc.addEventListener('play', updatePlayPauseIcon);
-      disc.addEventListener('pause', updatePlayPauseIcon);
-      disc.addEventListener('timeupdate', updateProgress);
-      disc.addEventListener('ended', gotoNextSong.bind(null, true));
+      disc.addEventListener("play", updatePlayPauseIcon);
+      disc.addEventListener("pause", updatePlayPauseIcon);
+      disc.addEventListener("timeupdate", updateProgress);
+      disc.addEventListener("ended", gotoNextSong.bind(null, true));
 
       // Go to next song when next button clicked
-      prev.addEventListener('click', gotoPreviousSong);
+      prev.addEventListener("click", gotoPreviousSong);
 
       // Go to previous song when previous button clicked
-      next.addEventListener('click', gotoNextSong.bind(null, false));
+      next.addEventListener("click", gotoNextSong.bind(null, false));
 
       // Move to different place in the song
-      progressContainer.addEventListener('click', setProgress);
+      progressContainer.addEventListener("click", setProgress);
 
-      
-      window.onload = function() {
+      window.onload = function () {
         playFromList();
       };
-      
     </script>
   </body>
 </html>
