@@ -324,6 +324,10 @@ function playAnimal() {
     btn.addEventListener("click", function (e) {
       const thisAnimal = this.id;
 
+      for (const btn of animalBtnList) {
+        btn.classList.remove("active");
+      }
+
       if (play) {
         console.log("clear");
         clearTimeout(timer);
@@ -336,6 +340,7 @@ function playAnimal() {
 
           animalDisc.play();
           play = true;
+          this.classList.add("active");
         }
       }
 
@@ -343,6 +348,7 @@ function playAnimal() {
         animalDisc.pause();
         console.log("finished");
         play = false;
+        this.classList.remove("active");
       }, soundDuration);
     });
   }
