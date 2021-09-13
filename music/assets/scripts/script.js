@@ -213,7 +213,7 @@ const animals = [
   {
     id: "vache",
     coverPath: "assets/images/animaux/vache.png",
-    soundStart: 4,
+    soundStart: 5,
     soundEnd: 12,
   },
   {
@@ -228,6 +228,84 @@ const animals = [
     soundStart: 21,
     soundEnd: 26,
   },
+  {
+    id: "gorille",
+    coverPath: "assets/images/animaux/gorille.png",
+    soundStart: 28,
+    soundEnd: 35,
+  },
+  {
+    id: "canard",
+    coverPath: "assets/images/animaux/canard.png",
+    soundStart: 36,
+    soundEnd: 43,
+  },
+  {
+    id: "coq",
+    coverPath: "assets/images/animaux/coq.png",
+    soundStart: 44,
+    soundEnd: 50,
+  },
+  {
+    id: "elephant",
+    coverPath: "assets/images/animaux/elephant.png",
+    soundStart: 51,
+    soundEnd: 58,
+  },
+  {
+    id: "girafe",
+    coverPath: "assets/images/animaux/girafe.png",
+    soundStart: 60,
+    soundEnd: 64,
+  },
+  {
+    id: "perroquet",
+    coverPath: "assets/images/animaux/perroquet.png",
+    soundStart: 67,
+    soundEnd: 75,
+  },
+  {
+    id: "cigogne",
+    coverPath: "assets/images/animaux/cigogne.png",
+    soundStart: 75,
+    soundEnd: 82,
+  },
+  {
+    id: "chien",
+    coverPath: "assets/images/animaux/chien.png",
+    soundStart: 83,
+    soundEnd: 90,
+  },
+  {
+    id: "lion",
+    coverPath: "assets/images/animaux/lion.png",
+    soundStart: 91,
+    soundEnd: 98,
+  },
+  {
+    id: "mouton",
+    coverPath: "assets/images/animaux/mouton.png",
+    soundStart: 99,
+    soundEnd: 106,
+  },
+  {
+    id: "poule",
+    coverPath: "assets/images/animaux/poule.png",
+    soundStart: 107,
+    soundEnd: 114,
+  },
+  {
+    id: "lapin",
+    coverPath: "assets/images/animaux/lapin.png",
+    soundStart: 115,
+    soundEnd: 122,
+  },
+  {
+    id: "zebre",
+    coverPath: "assets/images/animaux/zebre.png",
+    soundStart: 123,
+    soundEnd: 128,
+  },
 ];
 
 function getAnimals() {
@@ -237,20 +315,35 @@ function getAnimals() {
 }
 
 function playAnimal() {
+  animalDisc.src = "assets/music/animaux/animaux.mp3";
+  let soundDuration;
+  let play = false;
+  let timer;
+
   for (const btn of animalBtnList) {
     btn.addEventListener("click", function (e) {
       const thisAnimal = this.id;
+
+      if (play) {
+        console.log("clear");
+        clearTimeout(timer);
+      }
+
       for (const animal of animals) {
         if (thisAnimal === animal.id) {
-          animalDisc.src = "assets/music/animaux/animaux.mp3";
           animalDisc.currentTime = animal.soundStart;
+          soundDuration = (animal.soundEnd - animal.soundStart) * 1000;
+
           animalDisc.play();
-          if (animalDisc.currentTime === animal.soundEnd) {
-            console.log("test");
-            animalDisc.pause();
-          }
+          play = true;
         }
       }
+
+      timer = setTimeout(() => {
+        animalDisc.pause();
+        console.log("finished");
+        play = false;
+      }, soundDuration);
     });
   }
 }
