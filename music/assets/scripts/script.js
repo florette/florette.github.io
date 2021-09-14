@@ -321,35 +321,39 @@ function playAnimal() {
   let timer;
 
   for (const btn of animalBtnList) {
-    btn.addEventListener("click", function (e) {
-      const thisAnimal = this.id;
+    btn.addEventListener(
+      document.ontouchstart !== null ? "click" : "touchstart",
+      function (e) {
+        console.log("touch");
+        const thisAnimal = this.id;
 
-      for (const btn of animalBtnList) {
-        btn.classList.remove("active");
-      }
-
-      if (play) {
-        console.log("clear");
-        clearTimeout(timer);
-      }
-
-      for (const animal of animals) {
-        if (thisAnimal === animal.id) {
-          animalDisc.currentTime = animal.soundStart;
-          soundDuration = (animal.soundEnd - animal.soundStart) * 1000;
-
-          animalDisc.play();
-          play = true;
-          this.classList.add("active");
+        for (const btn of animalBtnList) {
+          btn.classList.remove("active");
         }
-      }
 
-      timer = setTimeout(() => {
-        animalDisc.pause();
-        console.log("finished");
-        play = false;
-        this.classList.remove("active");
-      }, soundDuration);
-    });
+        if (play) {
+          console.log("clear");
+          clearTimeout(timer);
+        }
+
+        for (const animal of animals) {
+          if (thisAnimal === animal.id) {
+            animalDisc.currentTime = animal.soundStart;
+            soundDuration = (animal.soundEnd - animal.soundStart) * 1000;
+
+            animalDisc.play();
+            play = true;
+            this.classList.add("active");
+          }
+        }
+
+        timer = setTimeout(() => {
+          animalDisc.pause();
+          console.log("finished");
+          play = false;
+          this.classList.remove("active");
+        }, soundDuration);
+      }
+    );
   }
 }
