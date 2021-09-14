@@ -1,3 +1,8 @@
+// register ServiceWorker, remember to use absolute path!
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/music/sw.js", { scope: "/music/" });
+}
+
 const cover = document.getElementById("cover");
 const disc = document.getElementById("disc");
 const title = document.getElementById("title");
