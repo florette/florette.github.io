@@ -7,7 +7,6 @@ var URLS = [
   "/music/index.html", // add path to those files here
   "/music/player.html",
   "/music/animaux.html",
-  "/music/assets/music/",
 ];
 
 // Respond with cached resources
