@@ -96,6 +96,13 @@ const songs = [
     duration: "1:35",
     href: "mon-ane",
   },
+  {
+    title: "Mon petit lapin",
+    coverPath: "assets/images/petit-lapin.jpg",
+    discPath: "assets/music/petit-lapin.mp3",
+    duration: "1:10",
+    href: "petit-lapin",
+  },
 ];
 
 // Find song index
@@ -310,6 +317,120 @@ const animals = [
     coverPath: "assets/images/animaux/zebre.png",
     soundStart: 123,
     soundEnd: 128,
+  },
+  {
+    id: "tigre",
+    coverPath: "assets/images/animaux/tigre.png",
+    soundStart: 130,
+    soundEnd: 137,
+  },
+  {
+    id: "chevre",
+    coverPath: "assets/images/animaux/chevre.png",
+    soundStart: 138,
+    soundEnd: 145,
+  },
+  {
+    id: "moustique",
+    coverPath: "assets/images/animaux/moustique.png",
+    soundStart: 146,
+    soundEnd: 151,
+  },
+  {
+    id: "cochon",
+    coverPath: "assets/images/animaux/cochon.png",
+    soundStart: 154,
+    soundEnd: 161,
+  },
+  {
+    id: "abeille",
+    coverPath: "assets/images/animaux/abeille.png",
+    soundStart: 162,
+    soundEnd: 168,
+  },
+  {
+    id: "ecureuil",
+    coverPath: "assets/images/animaux/ecureuil.png",
+    soundStart: 171,
+    soundEnd: 177,
+  },
+  {
+    id: "antilope",
+    coverPath: "assets/images/animaux/antilope.png",
+    soundStart: 178,
+    soundEnd: 183,
+  },
+  {
+    id: "kangourou",
+    coverPath: "assets/images/animaux/kangourou.png",
+    soundStart: 186,
+    soundEnd: 192,
+  },
+  {
+    id: "loup",
+    coverPath: "assets/images/animaux/loup.png",
+    soundStart: 193,
+    soundEnd: 200,
+  },
+  {
+    id: "ours",
+    coverPath: "assets/images/animaux/ours.png",
+    soundStart: 201,
+    soundEnd: 207,
+  },
+  {
+    id: "chameau",
+    coverPath: "assets/images/animaux/chameau.png",
+    soundStart: 209,
+    soundEnd: 216,
+  },
+  {
+    id: "cacatoes",
+    coverPath: "assets/images/animaux/cacatoes.png",
+    soundStart: 217,
+    soundEnd: 224,
+  },
+  {
+    id: "renard",
+    coverPath: "assets/images/animaux/renard.png",
+    soundStart: 225,
+    soundEnd: 230,
+  },
+  {
+    id: "aigle",
+    coverPath: "assets/images/animaux/aigle.png",
+    soundStart: 232,
+    soundEnd: 238,
+  },
+  {
+    id: "moineau",
+    coverPath: "assets/images/animaux/moineau.png",
+    soundStart: 241,
+    soundEnd: 246,
+  },
+  {
+    id: "hibou",
+    coverPath: "assets/images/animaux/hibou.png",
+    soundStart: 248,
+    soundEnd: 255,
+  },
+  {
+    id: "panda",
+    coverPath: "assets/images/animaux/panda.png",
+    soundStart: 256,
+    soundEnd: 263,
+  },
+  {
+    id: "sanglier",
+    coverPath: "assets/images/animaux/sanglier.png",
+    soundStart: 264,
+    soundEnd: 269,
+  },
+  {
+    id: "ane",
+    coverPath: "assets/images/animaux/ane.png",
+    soundStart: 271,
+    soundEnd: 278,
   },
 ];
 

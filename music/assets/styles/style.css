@@ -105,14 +105,14 @@ body {
 
 #control-box {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem;
 }
 
 .btn {
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   padding: 1rem;
   cursor: pointer;
   border: none;
@@ -146,21 +146,26 @@ body {
   }
 }
 
+#song-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .song {
   padding: 4px;
-  display: flex;
-  align-items: center;
   text-decoration: none;
+  flex: 50%;
+  text-align: center;
 }
 
 .song_img {
-  width: 60px;
+  width: 110px;
   height: auto;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
 .song h4 {
-  margin-left: 10px;
+  margin-bottom: 10px;
   color: black;
   font-size: 12px;
   font-weight: 400;
