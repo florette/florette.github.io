@@ -448,7 +448,8 @@ function playAnimal() {
 
   for (const btn of animalBtnList) {
     btn.addEventListener(
-      document.ontouchend !== null ? "click" : "touchend",
+      // document.ontouchend !== null ? "click" : "touchend",
+      "click",
       function (e) {
         const thisAnimal = this.id;
 
