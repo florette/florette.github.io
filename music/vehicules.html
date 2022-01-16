@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://florette.github.io/music/" />
-    <link rel="manifest" href="manifest.json" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -16,7 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles/style.css" />
-    <title>Music Player</title>
+    <title>Bruits de véhicules</title>
   </head>
   <body>
     <div class="container">
@@ -32,12 +30,14 @@
         >
       </div>
       <div class="music-container">
-        <div id="song-list"></div>
+        <div id="entity-list"></div>
+        <audio id="entity-disc"></audio>
       </div>
     </div>
     <script src="assets/scripts/script.js"></script>
     <script>
-      getSongs();
+      getEntity();
+      playEntity();
     </script>
   </body>
 </html>

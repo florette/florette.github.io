@@ -276,247 +276,377 @@ function playFromList() {
   }
 }
 
-// Animals sounds
+//***********************
+//***********************
+//***********************
+// Sounds
+//***********************
+//***********************
+//***********************
 
 // Animals variables
-const animalList = document.getElementById("animal-list");
-const animalBtnList = document.getElementsByClassName("animal__item");
-const animalDisc = document.getElementById("animal-disc");
+const entityList = document.getElementById("entity-list");
+const entityBtnList = document.getElementsByClassName("entity__item");
+const entityDisc = document.getElementById("entity-disc");
 
-// Animals
-const animals = [
-  {
-    id: "vache",
-    coverPath: "assets/images/animaux/vache.png",
-    soundStart: 6,
-    soundEnd: 12,
-  },
-  {
-    id: "cheval",
-    coverPath: "assets/images/animaux/cheval.png",
-    soundStart: 13.5,
-    soundEnd: 18,
-  },
-  {
-    id: "chat",
-    coverPath: "assets/images/animaux/chat.png",
-    soundStart: 21.5,
-    soundEnd: 26,
-  },
-  {
-    id: "gorille",
-    coverPath: "assets/images/animaux/gorille.png",
-    soundStart: 29,
-    soundEnd: 35,
-  },
-  {
-    id: "canard",
-    coverPath: "assets/images/animaux/canard.png",
-    soundStart: 37,
-    soundEnd: 43,
-  },
-  {
-    id: "coq",
-    coverPath: "assets/images/animaux/coq.png",
-    soundStart: 45,
-    soundEnd: 50,
-  },
-  {
-    id: "elephant",
-    coverPath: "assets/images/animaux/elephant.png",
-    soundStart: 52.5,
-    soundEnd: 58,
-  },
-  {
-    id: "girafe",
-    coverPath: "assets/images/animaux/girafe.png",
-    soundStart: 61,
-    soundEnd: 64,
-  },
-  {
-    id: "perroquet",
-    coverPath: "assets/images/animaux/perroquet.png",
-    soundStart: 68,
-    soundEnd: 75,
-  },
-  {
-    id: "cigogne",
-    coverPath: "assets/images/animaux/cigogne.png",
-    soundStart: 76,
-    soundEnd: 82,
-  },
-  {
-    id: "chien",
-    coverPath: "assets/images/animaux/chien.png",
-    soundStart: 84,
-    soundEnd: 90,
-  },
-  {
-    id: "lion",
-    coverPath: "assets/images/animaux/lion.png",
-    soundStart: 92,
-    soundEnd: 98,
-  },
-  {
-    id: "mouton",
-    coverPath: "assets/images/animaux/mouton.png",
-    soundStart: 100,
-    soundEnd: 106,
-  },
-  {
-    id: "poule",
-    coverPath: "assets/images/animaux/poule.png",
-    soundStart: 108,
-    soundEnd: 114,
-  },
-  {
-    id: "lapin",
-    coverPath: "assets/images/animaux/lapin.png",
-    soundStart: 115,
-    soundEnd: 122,
-  },
-  {
-    id: "zebre",
-    coverPath: "assets/images/animaux/zebre.png",
-    soundStart: 123,
-    soundEnd: 128,
-  },
-  {
-    id: "tigre",
-    coverPath: "assets/images/animaux/tigre.png",
-    soundStart: 130,
-    soundEnd: 137,
-  },
-  {
-    id: "chevre",
-    coverPath: "assets/images/animaux/chevre.png",
-    soundStart: 138,
-    soundEnd: 145,
-  },
-  {
-    id: "moustique",
-    coverPath: "assets/images/animaux/moustique.png",
-    soundStart: 146,
-    soundEnd: 151,
-  },
-  {
-    id: "cochon",
-    coverPath: "assets/images/animaux/cochon.png",
-    soundStart: 154,
-    soundEnd: 161,
-  },
-  {
-    id: "abeille",
-    coverPath: "assets/images/animaux/abeille.png",
-    soundStart: 162,
-    soundEnd: 168,
-  },
-  {
-    id: "ecureuil",
-    coverPath: "assets/images/animaux/ecureuil.png",
-    soundStart: 171,
-    soundEnd: 177,
-  },
-  {
-    id: "antilope",
-    coverPath: "assets/images/animaux/antilope.png",
-    soundStart: 178,
-    soundEnd: 183,
-  },
-  {
-    id: "kangourou",
-    coverPath: "assets/images/animaux/kangourou.png",
-    soundStart: 186,
-    soundEnd: 192,
-  },
-  {
-    id: "loup",
-    coverPath: "assets/images/animaux/loup.png",
-    soundStart: 193,
-    soundEnd: 200,
-  },
-  {
-    id: "ours",
-    coverPath: "assets/images/animaux/ours.png",
-    soundStart: 201,
-    soundEnd: 207,
-  },
-  {
-    id: "chameau",
-    coverPath: "assets/images/animaux/chameau.png",
-    soundStart: 209,
-    soundEnd: 216,
-  },
-  {
-    id: "cacatoes",
-    coverPath: "assets/images/animaux/cacatoes.png",
-    soundStart: 217,
-    soundEnd: 224,
-  },
-  {
-    id: "renard",
-    coverPath: "assets/images/animaux/renard.png",
-    soundStart: 225,
-    soundEnd: 230,
-  },
-  {
-    id: "aigle",
-    coverPath: "assets/images/animaux/aigle.png",
-    soundStart: 232,
-    soundEnd: 238,
-  },
-  {
-    id: "moineau",
-    coverPath: "assets/images/animaux/moineau.png",
-    soundStart: 241,
-    soundEnd: 246,
-  },
-  {
-    id: "hibou",
-    coverPath: "assets/images/animaux/hibou.png",
-    soundStart: 248,
-    soundEnd: 255,
-  },
-  {
-    id: "panda",
-    coverPath: "assets/images/animaux/panda.png",
-    soundStart: 256,
-    soundEnd: 263,
-  },
-  {
-    id: "sanglier",
-    coverPath: "assets/images/animaux/sanglier.png",
-    soundStart: 264,
-    soundEnd: 269,
-  },
-  {
-    id: "ane",
-    coverPath: "assets/images/animaux/ane.png",
-    soundStart: 271,
-    soundEnd: 278,
-  },
-];
+// Entities / sound makers
+const entities = {
+  animals: [
+    {
+      id: "vache",
+      coverPath: "assets/images/animaux/vache.png",
+      soundStart: 6,
+      soundEnd: 12,
+    },
+    {
+      id: "cheval",
+      coverPath: "assets/images/animaux/cheval.png",
+      soundStart: 13.5,
+      soundEnd: 18,
+    },
+    {
+      id: "chat",
+      coverPath: "assets/images/animaux/chat.png",
+      soundStart: 21.5,
+      soundEnd: 26,
+    },
+    {
+      id: "gorille",
+      coverPath: "assets/images/animaux/gorille.png",
+      soundStart: 29,
+      soundEnd: 35,
+    },
+    {
+      id: "canard",
+      coverPath: "assets/images/animaux/canard.png",
+      soundStart: 37,
+      soundEnd: 43,
+    },
+    {
+      id: "coq",
+      coverPath: "assets/images/animaux/coq.png",
+      soundStart: 45,
+      soundEnd: 50,
+    },
+    {
+      id: "elephant",
+      coverPath: "assets/images/animaux/elephant.png",
+      soundStart: 52.5,
+      soundEnd: 58,
+    },
+    {
+      id: "girafe",
+      coverPath: "assets/images/animaux/girafe.png",
+      soundStart: 61,
+      soundEnd: 64,
+    },
+    {
+      id: "perroquet",
+      coverPath: "assets/images/animaux/perroquet.png",
+      soundStart: 68,
+      soundEnd: 75,
+    },
+    {
+      id: "cigogne",
+      coverPath: "assets/images/animaux/cigogne.png",
+      soundStart: 76,
+      soundEnd: 82,
+    },
+    {
+      id: "chien",
+      coverPath: "assets/images/animaux/chien.png",
+      soundStart: 84,
+      soundEnd: 90,
+    },
+    {
+      id: "lion",
+      coverPath: "assets/images/animaux/lion.png",
+      soundStart: 92,
+      soundEnd: 98,
+    },
+    {
+      id: "mouton",
+      coverPath: "assets/images/animaux/mouton.png",
+      soundStart: 100,
+      soundEnd: 106,
+    },
+    {
+      id: "poule",
+      coverPath: "assets/images/animaux/poule.png",
+      soundStart: 108,
+      soundEnd: 114,
+    },
+    {
+      id: "lapin",
+      coverPath: "assets/images/animaux/lapin.png",
+      soundStart: 115,
+      soundEnd: 122,
+    },
+    {
+      id: "zebre",
+      coverPath: "assets/images/animaux/zebre.png",
+      soundStart: 123,
+      soundEnd: 128,
+    },
+    {
+      id: "tigre",
+      coverPath: "assets/images/animaux/tigre.png",
+      soundStart: 130,
+      soundEnd: 137,
+    },
+    {
+      id: "chevre",
+      coverPath: "assets/images/animaux/chevre.png",
+      soundStart: 138,
+      soundEnd: 145,
+    },
+    {
+      id: "moustique",
+      coverPath: "assets/images/animaux/moustique.png",
+      soundStart: 146,
+      soundEnd: 151,
+    },
+    {
+      id: "cochon",
+      coverPath: "assets/images/animaux/cochon.png",
+      soundStart: 154,
+      soundEnd: 161,
+    },
+    {
+      id: "abeille",
+      coverPath: "assets/images/animaux/abeille.png",
+      soundStart: 162,
+      soundEnd: 168,
+    },
+    {
+      id: "ecureuil",
+      coverPath: "assets/images/animaux/ecureuil.png",
+      soundStart: 171,
+      soundEnd: 177,
+    },
+    {
+      id: "antilope",
+      coverPath: "assets/images/animaux/antilope.png",
+      soundStart: 178,
+      soundEnd: 183,
+    },
+    {
+      id: "kangourou",
+      coverPath: "assets/images/animaux/kangourou.png",
+      soundStart: 186,
+      soundEnd: 192,
+    },
+    {
+      id: "loup",
+      coverPath: "assets/images/animaux/loup.png",
+      soundStart: 193,
+      soundEnd: 200,
+    },
+    {
+      id: "ours",
+      coverPath: "assets/images/animaux/ours.png",
+      soundStart: 201,
+      soundEnd: 207,
+    },
+    {
+      id: "chameau",
+      coverPath: "assets/images/animaux/chameau.png",
+      soundStart: 209,
+      soundEnd: 216,
+    },
+    {
+      id: "cacatoes",
+      coverPath: "assets/images/animaux/cacatoes.png",
+      soundStart: 217,
+      soundEnd: 224,
+    },
+    {
+      id: "renard",
+      coverPath: "assets/images/animaux/renard.png",
+      soundStart: 225,
+      soundEnd: 230,
+    },
+    {
+      id: "aigle",
+      coverPath: "assets/images/animaux/aigle.png",
+      soundStart: 232,
+      soundEnd: 238,
+    },
+    {
+      id: "moineau",
+      coverPath: "assets/images/animaux/moineau.png",
+      soundStart: 241,
+      soundEnd: 246,
+    },
+    {
+      id: "hibou",
+      coverPath: "assets/images/animaux/hibou.png",
+      soundStart: 248,
+      soundEnd: 255,
+    },
+    {
+      id: "panda",
+      coverPath: "assets/images/animaux/panda.png",
+      soundStart: 256,
+      soundEnd: 263,
+    },
+    {
+      id: "sanglier",
+      coverPath: "assets/images/animaux/sanglier.png",
+      soundStart: 264,
+      soundEnd: 269,
+    },
+    {
+      id: "ane",
+      coverPath: "assets/images/animaux/ane.png",
+      soundStart: 271,
+      soundEnd: 278,
+    },
+  ],
+  vehicules: [
+    {
+      id: "van",
+      coverPath: "assets/images/vehicules/van.png",
+      soundStart: 11,
+      soundEnd: 16,
+    },
+    {
+      id: "truck",
+      coverPath: "assets/images/vehicules/truck.png",
+      soundStart: 17,
+      soundEnd: 31,
+    },
+    {
+      id: "bulldozer",
+      coverPath: "assets/images/vehicules/bulldozer.png",
+      soundStart: 32,
+      soundEnd: 38,
+    },
+    {
+      id: "digger",
+      coverPath: "assets/images/vehicules/digger.png",
+      soundStart: 39,
+      soundEnd: 52,
+    },
+    {
+      id: "dumptruck",
+      coverPath: "assets/images/vehicules/dumptruck.png",
+      soundStart: 52,
+      soundEnd: 61,
+    },
+    {
+      id: "forklift",
+      coverPath: "assets/images/vehicules/forklift.png",
+      soundStart: 62,
+      soundEnd: 70,
+    },
+    {
+      id: "train",
+      coverPath: "assets/images/vehicules/train.png",
+      soundStart: 70,
+      soundEnd: 79,
+    },
+    {
+      id: "fasttrain",
+      coverPath: "assets/images/vehicules/fasttrain.png",
+      soundStart: 79,
+      soundEnd: 90,
+    },
+    {
+      id: "sailboat",
+      coverPath: "assets/images/vehicules/sailboat.png",
+      soundStart: 90,
+      soundEnd: 98,
+    },
+    {
+      id: "cargo",
+      coverPath: "assets/images/vehicules/cargo.png",
+      soundStart: 99,
+      soundEnd: 111,
+    },
+    {
+      id: "submarine",
+      coverPath: "assets/images/vehicules/submarine.png",
+      soundStart: 112,
+      soundEnd: 121,
+    },
+    {
+      id: "warship",
+      coverPath: "assets/images/vehicules/warship.png",
+      soundStart: 122,
+      soundEnd: 130,
+    },
+    {
+      id: "airplane",
+      coverPath: "assets/images/vehicules/airplane.png",
+      soundStart: 131,
+      soundEnd: 136,
+    },
+    {
+      id: "plane",
+      coverPath: "assets/images/vehicules/plane.png",
+      soundStart: 137,
+      soundEnd: 142,
+    },
+    {
+      id: "spaceshuttle",
+      coverPath: "assets/images/vehicules/spaceshuttle.png",
+      soundStart: 142,
+      soundEnd: 148,
+    },
+    {
+      id: "rocket",
+      coverPath: "assets/images/vehicules/rocket.png",
+      soundStart: 149,
+      soundEnd: 161,
+    },
+    {
+      id: "rover",
+      coverPath: "assets/images/vehicules/rover.png",
+      soundStart: 162,
+      soundEnd: 172,
+    },
+  ],
+};
 
-function getAnimals() {
-  for (const animal of animals) {
-    animalList.innerHTML += `<button class="animal__item" id="${animal.id}"><img src="${animal.coverPath}"></button>`;
+//***********************
+//***********************
+//***********************
+//Functions
+//***********************
+//***********************
+//***********************
+
+// Selection of sound makers in object = animaux or vehicules
+let entitySelection;
+if (window.location.href.indexOf("animaux") > -1) {
+  entitySelection = entities.animals;
+  entityDisc.src = "assets/music/animaux/animaux.mp3";
+  console.log(entitySelection);
+} else if (window.location.href.indexOf("vehicules") > -1) {
+  entitySelection = entities.vehicules;
+  entityDisc.src = "assets/music/vehicules/vehicules.mp3";
+}
+
+function getEntity() {
+  for (const entity of entitySelection) {
+    entityList.innerHTML += `<button class="entity__item" id="${entity.id}"><img src="${entity.coverPath}"></button>`;
   }
 }
 
-function playAnimal() {
-  animalDisc.src = "assets/music/animaux/animaux.mp3";
+function playEntity() {
   let soundDuration;
   let play = false;
   let timer;
 
-  for (const btn of animalBtnList) {
+  for (const btn of entityBtnList) {
     btn.addEventListener(
       // document.ontouchend !== null ? "click" : "touchend",
       "click",
       function (e) {
-        const thisAnimal = this.id;
+        const thisEntity = this.id;
 
-        for (const btn of animalBtnList) {
+        for (const btn of entityBtnList) {
           btn.classList.remove("active");
         }
 
@@ -525,19 +655,19 @@ function playAnimal() {
           clearTimeout(timer);
         }
 
-        for (const animal of animals) {
-          if (thisAnimal === animal.id) {
-            animalDisc.currentTime = animal.soundStart;
-            soundDuration = (animal.soundEnd - animal.soundStart) * 1000;
+        for (const entity of entitySelection) {
+          if (thisEntity === entity.id) {
+            entityDisc.currentTime = entity.soundStart;
+            soundDuration = (entity.soundEnd - entity.soundStart) * 1000;
 
-            animalDisc.play();
+            entityDisc.play();
             play = true;
             this.classList.add("active");
           }
         }
 
         timer = setTimeout(() => {
-          animalDisc.pause();
+          entityDisc.pause();
           console.log("finished");
           play = false;
           this.classList.remove("active");
